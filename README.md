@@ -3,8 +3,8 @@
 **A resume tailoring skill where the fabrication gate is code, not a promise.**
 
 Every "tailor my resume to this JD" tool is a prompt. Ask it not to invent and
-it says it won't invent, then happily writes "cut p95 from 780 ms to 210 ms with
-Kafka" because Kafka is a word that fits. `true-tailor` is a two-file skill for
+it promises it won't, then happily writes "streamed through Kafka" because Kafka
+is a word that fits the sentence. `true-tailor` is a two-file skill for
 agents (Claude Code, Codex): the skill file makes the model produce diff-shaped
 suggestions with verbatim quotes, and `gate.py` - one 500-line Python standard
 library file, no install, no network, no API key - rejects any suggestion whose
@@ -19,7 +19,7 @@ BLOCK demo-d5-fabricated-stack [modify/fabricated] term Kafka has no source in t
 60 seconds of it happening, on a synthetic resume and a synthetic JD:
 [docs/gate-demo.mp4](docs/gate-demo.mp4). The clip is a terminal replay of the
 checked-in [examples/demoflow](examples/demoflow) run, not a staged mock: every
-line in it came out of the two commands below.
+line in it came out of the commands printed in this README.
 
 ## Try the gate in 30 seconds, without a model
 
@@ -48,11 +48,11 @@ english fixtures
   ok   e6-allowlist-term                blocked without the allowlist, as designed
 ```
 
-Four of those seventeen encode bugs the parent app really shipped and had to fix
-(an unsourced metric, a no-op "suggestion", an invented project, and `add` diffs
-that skipped the content check). The rest are planted to prove each class of lie
-gets caught. The fixture files are the spec: `fixtures/expected*.json` says what
-the gate must do, `selftest.py` fails if it stops doing it.
+Four of those seventeen encode bugs the parent app really shipped and had to fix:
+an unsourced metric, a no-op "suggestion", and two `add` diffs that skipped the
+content check entirely. The rest are planted to prove each class of lie gets
+caught. The fixture files are the spec: `fixtures/expected*.json` says what the
+gate must do, `selftest.py` fails if it stops doing it.
 
 ## Install
 
