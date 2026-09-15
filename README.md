@@ -174,9 +174,10 @@ for - but the 30-second version lives here.
 
 ## Feedback
 
-Open a [discussion](https://github.com/shing26/truetailor/discussions) with the
-format "I expected X and saw Y", plus the `GATE:` line from your run. First-run
-friction is the whole point of this project, so a confused agent is a bug report
-even when the gate behaved correctly.
+Open a [discussion](https://github.com/shing26/truetailor/discussions) in the
+shape described in [docs/first-run-feedback.md](docs/first-run-feedback.md):
+"I expected X and saw Y", plus the `GATE:` line from your run. First-run friction
+is the whole point of this project, so a confused agent is a bug report even when
+the gate behaved correctly.
 
 MIT - see [LICENSE](LICENSE).
