@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+.DS_Store
+
+# Local tailoring sessions: your resume is not a pull request.
+/resume.md
+/jd.txt
+/gap.json
+/diffs.json
+/tailoring.jsonl
+/resume.r*.md

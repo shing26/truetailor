@@ -1,0 +1,32 @@
+[
+  {
+    "diff_id": "demo-r2-1-degradation-story",
+    "type": "modify",
+    "section": "Experience / Northwind Freight",
+    "original": "Shipped a rate limiter that kept the intake API alive through a 3x traffic spike during a regional storm.",
+    "proposed": "Shipped a rate limiter that kept the intake API alive through a 3x traffic spike during a regional storm - load shedding as the first response, not the last one.",
+    "provenance": "Shipped a rate limiter that kept the intake API alive through a 3x traffic spike during a regional storm.",
+    "reason": "EVAL round1 leftover: gap 'misaligned_emphasis' said the 3x spike is buried as an aside; JD item 2 buys availability reasoning, and this bullet is that evidence",
+    "confidence": "high"
+  },
+  {
+    "diff_id": "demo-r2-2-etl-correctness",
+    "type": "modify",
+    "section": "Experience / Bluefin Health",
+    "original": "Built ETL jobs that moved 2 million claim rows per night into the analytics warehouse.",
+    "proposed": "Built the nightly claim ETL path - 2 million rows into the analytics warehouse, where the counts had to stay right, not just arrive.",
+    "provenance": "Built ETL jobs that moved 2 million claim rows per night into the analytics warehouse.",
+    "reason": "EVAL round1 leftover: volume narrated as a row count instead of a data path that had to stay correct",
+    "confidence": "medium"
+  },
+  {
+    "diff_id": "demo-r2-3-observability-link",
+    "type": "modify",
+    "section": "Skills",
+    "original": "Structured logging, alerting on-call rotation",
+    "proposed": "Structured logging and alerting carried through an on-call rotation for 6 services",
+    "provenance": "Structured logging, alerting on-call rotation",
+    "reason": "EVAL round1 leftover: JD items 4 and 5 (runbooks, incident tooling) - the Skills line lists two facts that were one job",
+    "confidence": "medium"
+  }
+]

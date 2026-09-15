@@ -1,0 +1,47 @@
+name: gate contract
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  fixtures:
+    name: golden scenarios on two Python versions
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: stdlib purity (no third-party imports allowed in gate.py)
+        run: |
+          python - <<'PY'
+          import ast, sys
+          allowed = {"__future__", "argparse", "bisect", "difflib", "hashlib",
+                     "json", "re", "sys", "datetime", "pathlib"}
+          tree = ast.parse(open("gate.py", encoding="utf-8").read())
+          found = set()
+          for node in ast.walk(tree):
+              if isinstance(node, ast.Import):
+                  found |= {a.name.split(".")[0] for a in node.names}
+              elif isinstance(node, ast.ImportFrom) and node.module:
+                  found.add(node.module.split(".")[0])
+          extra = found - allowed
+          if extra:
+              sys.exit(f"gate.py imported non-stdlib modules: {sorted(extra)}")
+          print("stdlib only:", sorted(found))
+          PY
+      - name: selftest (fixtures through the real gate)
+        run: python selftest.py
+      - name: demoflow replay must reproduce the checked-in summary
+        run: |
+          python gate.py --resume examples/demoflow/resume.md \
+            --diffs examples/demoflow/diffs.round1.json \
+            --allowlist examples/demoflow/gap.json | tail -n 1 | grep -q \
+            "GATE: 7 diffs / 3 blocked (missing=0, fabricated=2, noop=1)"
+      - name: python 3.9 compatibility check
+        if: matrix.python-version == '3.9'
+        run: python -c "import gate, apply, selftest; print('import ok')"

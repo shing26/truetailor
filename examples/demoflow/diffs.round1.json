@@ -1,0 +1,72 @@
+[
+  {
+    "diff_id": "demo-d1-service-ownership",
+    "type": "modify",
+    "section": "Experience / Northwind Freight",
+    "original": "Own the shipment tracking service (FastAPI + PostgreSQL) used by 4,000 dispatchers a day.",
+    "proposed": "Own the shipment tracking service end to end (FastAPI + PostgreSQL): 4,000 dispatchers a day, intake through incident and on-call.",
+    "provenance": "Own the shipment tracking service (FastAPI + PostgreSQL) used by 4,000 dispatchers a day.",
+    "reason": "gap: incident-to-steady-state ownership - JD item 2 wants a person who owns the number, not the ticket",
+    "confidence": "high"
+  },
+  {
+    "diff_id": "demo-d2-latency-slo",
+    "type": "modify",
+    "section": "Experience / Northwind Freight",
+    "original": "Cut p95 tracking lookup from 780 ms to 210 ms with a Redis read cache and a rewritten route query.",
+    "proposed": "Cut p95 tracking lookup from 780 ms to 210 ms with a Redis read cache and a rewritten PostgreSQL query plan, then held that SLO through the on-call rotation.",
+    "provenance": "Cut p95 tracking lookup from 780 ms to 210 ms with a Redis read cache and a rewritten route query.",
+    "reason": "gap: 'PostgreSQL query plans' and 'SLO' are evidenced (query rewrite + measured p95) but never named; both come through the gap.json allowlist",
+    "confidence": "high"
+  },
+  {
+    "diff_id": "demo-d3-runbooks-salvaged",
+    "type": "modify",
+    "section": "Experience / Northwind Freight",
+    "original": "Ran the on-call rotation for 6 services and rewrote 11 runbooks.",
+    "proposed": "Carried 6 services through the on-call rotation and rewrote 11 runbooks into the paths the team actually follows at 3 a.m.",
+    "provenance": "Ran the on-call rotation across 6 services and rewrote 11 runbooks.",
+    "reason": "gap: JD item 4 - runbooks that are used. Note the provenance quote here is misquoted ('across' for 'for') so the gate has to fish it back out of the source line",
+    "confidence": "medium"
+  },
+  {
+    "diff_id": "demo-d4-fabricated-throughput",
+    "type": "add",
+    "section": "Experience / Northwind Freight",
+    "original": "Shipped a rate limiter that kept the intake API alive through a 3x traffic spike during a regional storm.",
+    "proposed": "Shipped a rate limiter that held the intake API at 12,000 events per second through a 3x traffic spike during a regional storm.",
+    "provenance": "Shipped a rate limiter that kept the intake API alive through a 3x traffic spike during a regional storm.",
+    "reason": "planted fabrication for the demo: a real anchor sentence carrying a number nobody ever measured",
+    "confidence": "high"
+  },
+  {
+    "diff_id": "demo-d5-fabricated-stack",
+    "type": "modify",
+    "section": "Experience / Bluefin Health",
+    "original": "Built ETL jobs that moved 2 million claim rows per night into the analytics warehouse.",
+    "proposed": "Built Kafka-backed ETL jobs that moved 2 million claim rows per night into the analytics warehouse.",
+    "provenance": "Built ETL jobs that moved 2 million claim rows per night into the analytics warehouse.",
+    "reason": "planted fabrication for the demo: a tool the candidate never used, in a sentence that is otherwise true",
+    "confidence": "high"
+  },
+  {
+    "diff_id": "demo-d6-noop",
+    "type": "modify",
+    "section": "Experience / Bluefin Health",
+    "original": "Wrote the appointment reminder service in Python; 98% delivery rate on a 350k monthly volume.",
+    "proposed": "Wrote the appointment reminder service in Python; 98% delivery rate on a 350k monthly volume.",
+    "provenance": "Wrote the appointment reminder service in Python; 98% delivery rate on a 350k monthly volume.",
+    "reason": "planted no-op: the model touched the line and changed nothing",
+    "confidence": "low"
+  },
+  {
+    "diff_id": "demo-d7-load-testing",
+    "type": "add",
+    "section": "Skills",
+    "original": "Load testing with Locust; CI on GitHub Actions",
+    "proposed": "Load testing with Locust wired into CI on GitHub Actions, so capacity regressions surface before a release instead of after it.",
+    "provenance": "Load testing with Locust; CI on GitHub Actions",
+    "reason": "gap: 'capacity reasoning' + 'load testing in CI' - the two Skills bullets are one workflow in practice and read as two trivia facts otherwise",
+    "confidence": "medium"
+  }
+]

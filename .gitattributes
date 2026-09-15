@@ -1,0 +1,8 @@
+# Byte-stable checkout: the ResuAlign app vendors gate.py and these fixtures and
+# locks their hashes, so line endings must not depend on the machine.
+* text eol=lf
+*.mp4 binary
+*.webm binary
+*.png binary
+*.gif binary
+*.jpg binary

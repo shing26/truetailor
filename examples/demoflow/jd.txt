@@ -1,0 +1,19 @@
+Senior Backend Engineer - Platform (fictional posting, written for this demo)
+
+Kestrel Robotics | Pittsburgh or remote | posted last week
+
+What you'll do
+1. Own services that fleet telemetry flows through: ingestion, routing, storage.
+2. Make latency and availability numbers a standing topic in your weekly review.
+3. Work with the ML platform team on the plumbing around their models.
+4. Write the runbooks your on-call rotation actually uses.
+5. Turn repeated incident response into shared tooling.
+
+What we look for
+- Deep Python in production, ideally FastAPI or a comparable async framework.
+- Stateful services: caches, queues, Postgres query plans.
+- Evidence you have carried a service from incident to steady state.
+- Comfort with load testing and capacity reasoning.
+- Bonus: robotics, telemetry, or hardware-adjacent data.
+
+This text is invented for the demo; it is not a real job advertisement.

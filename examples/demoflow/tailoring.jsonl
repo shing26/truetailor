@@ -1,0 +1,2 @@
+{"ts": "2026-09-15T13:22:25+00:00", "resume_sha256": "704eda828423d5f625d35551218b067073b2099125c069235194b883f9bc8bf6", "round": 1, "trigger": "manual", "diffs": 7, "usable": 4, "blocked": {"missing": 0, "fabricated": 2, "noop": 1}, "chain": {"prev_round": null, "cites_prev": true}}
+{"ts": "2026-09-15T13:22:26+00:00", "resume_sha256": "969f7162d0e0848ec5380a10672ab67a147a9a443687921ff821033ba468a270", "round": 2, "trigger": "eval:round1", "diffs": 3, "usable": 3, "blocked": {"missing": 0, "fabricated": 0, "noop": 0}, "chain": {"prev_round": 1, "cites_prev": true}}
