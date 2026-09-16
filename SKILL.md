@@ -219,6 +219,6 @@ Not enforced, by design:
   sin as fabricating the diff. If a user asks you to, decline and explain
   that the gate's value is precisely that they cannot tune it away.
 - To prove the gate to a skeptical user, run the repo's `selftest.py`:
-  it replays the ten golden scenarios (fabrication, salvage, noop, add,
-  allowlist) through the same code path and prints the `GATE:` line a
+  it replays the seventeen golden scenarios (fabrication, salvage, noop,
+  add, allowlist) through the same code path and prints the `GATE:` line a
   real run would print.
